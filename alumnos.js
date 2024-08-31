@@ -1,20 +1,7 @@
 // alumnos.js
-// index.js
-const express = require('express');
-const app = express();
-const alumnosRouter = require('./alumnos');
-
-app.use(express.json());
-app.use('/api', alumnosRouter);
-
-const PORT = process.env.PORT || 8001;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
-
 const express = require('express');
 const router = express.Router();
-const db = require('./database');
+const db = require('./database'); // Importar la base de datos
 
 // Crear un nuevo alumno
 router.post('/alumnos', (req, res) => {
@@ -81,3 +68,4 @@ router.delete('/alumnos/:id', (req, res) => {
 });
 
 module.exports = router;
+
